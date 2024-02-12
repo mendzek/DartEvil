@@ -1,4 +1,4 @@
-#ifndef WINDOWLOGINPASSWORD_H
+ifndef WINDOWLOGINPASSWORD_H
 #define WINDOWLOGINPASSWORD_H
 
 #include <QMainWindow>
@@ -10,8 +10,7 @@ class windowLoginPassword : public QWidget
     Q_OBJECT
 public:
     explicit windowLoginPassword(QWidget *parent = nullptr);
-
-signals:
+    ~windowLoginPassword();
 };
 
 #endif // WINDOWLOGINPASSWORD_H
