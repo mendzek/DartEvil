@@ -24,30 +24,34 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QWidget *wrongLogPassWindow;
-    bool check = true;
+    QWidget *NewColumnNameInputWindow;
+    QWidget *workWindow;
+    bool check = false;
+    std::list<QString> ArrForTableView{"!","@","#","$","%","^","&","*","(",")","_"};
+    int numOfColumn=0;
     QString login;
     QString password;
     QString RightLogin = "asd";
     QString RightPassword = "asd";
+    QString columnName=NULL;
+    QString tempShit=NULL;
 
 private slots:
     void on_BT_AcceptLogPass_clicked();
     void on_BT_Edit_clicked();
     void on_BT_DoFlip_clicked();
-    //void on_BT_OK_clicked();
+    void on_BT_OK_clicked();
+    void on_BT_AddColumn_OK_clicked();
 
 private:
     Ui::MainWindow *ui;
-    /*QPushButton *BT_Login;
-    QPushButton *BT_Password;
-    QTextEdit *TE_Login;
-    QTextEdit *TE_LoginHint;
-    QTextEdit *TE_Password;
-    QTextEdit *TE_PasswordHint;*/
 
     QStandardItemModel *model;
     QTableView *tableViewMain;
     QPushButton *BT_Edit;
     QPushButton *BT_DoFlip;
+    QPushButton *BT_OK;
+    QPushButton *BT_AddColumn_OK;
+    QLineEdit *LE_ColumnName;
 };
 #endif // MAINWINDOW_H
